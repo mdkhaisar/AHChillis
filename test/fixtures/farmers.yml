@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  item_name: MyString
+  bags: 1
+  price_per_kg: 1
+  apmc_mf: 1.5
+  amount: 1.5
+
+two:
+  name: MyString
+  item_name: MyString
+  bags: 1
+  price_per_kg: 1
+  apmc_mf: 1.5
+  amount: 1.5

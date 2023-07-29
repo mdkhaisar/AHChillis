@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AH Chillis</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .table-bordered td,
+      .table-bordered th {
+        border: 1px solid #ddd;
+        padding: 10px;
+        word-break: break-all;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .h4-14 h4 {
+        font-size: 12px;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+      .img {
+        margin-left: "auto";
+        margin-top: "auto";
+        height: 30px;
+      }
+      pre,
+      p {
+        /* width: 99%; */
+        /* overflow: auto; */
+        /* bpicklist: 1px solid #aaa; */
+        padding: 0;
+        margin: 0;
+      }
+      table {
+        font-family: arial, sans-serif;
+        width: 100%;
+        border-collapse: collapse;
+        padding: 1px;
+      }
+      .hm-p p {
+        text-align: left;
+        padding: 1px;
+        padding: 5px 4px;
+      }
+      td,
+      th {
+        text-align: left;
+        padding: 8px 6px;
+      }
+      .table-b td,
+      .table-b th {
+        border: 1px solid #ddd;
+      }
+      th {
+        /* background-color: #ddd; */
+      }
+      .hm-p td,
+      .hm-p th {
+        padding: 3px 0px;
+      }
+      .cropped {
+        float: right;
+        margin-bottom: 20px;
+        height: 100px; /* height of container */
+        overflow: hidden;
+      }
+      .cropped img {
+        width: 400px;
+        margin: 8px 0px 0px 80px;
+      }
+      .main-pd-wrapper {
+        box-shadow: 0 0 10px #ddd;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px;
+      }
+      .table-bordered td,
+      .table-bordered th {
+        border: 1px solid #ddd;
+        padding: 10px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main-pd-wrapper" style="width: 1000px; margin: auto">
+      <h3 style="margin: 0; text-align: center"> BILL - AH CHILLIS </h3>
+      <table
+        class="table table-bordered h4-14"
+        style="width: 100%; -fs-table-paginate: paginate; margin-top: 15px"
+      >
+        <thead style="display: table-header-group">
+          <tr
+             style="
+              margin: 0;
+              text-align: top;
+              background: #fcbd021f;
+              
+              padding-left: 20px;
+              -webkit-print-color-adjust: exact;
+              "
+              >
+          <td colspan="3">
+              <h3><%= @customer.name %></h3>
+              <p>Address: <%= @customer.address %></p>
+              <p>City : <%= @customer.city %></p>
+              <p>State : <%= @customer.state %></p> <p>Country : India.</p><p> PinCode : <%= @customer.pincode %></p>
+              <p>GSTIN : <%= @customer.gstin %></p>
+              <p>Date: <%= @customer.created_at %></p>
+            </td>
+            <td colspan="5">
+              <h3>
+                AH CHILLIS<br>
+                <p
+                  style="
+                    font-weight: 300;
+                    font-size: 85%;
+                    color: #626262;
+                    margin-top: 7px;
+                  "
+                >
+                <b>Merchant & Commission Agents</b><br>
+                Ward no.05. Plot No-14 Mahateja Nagar, <br>
+                Guggurahatti, Ballari - 583 101. <br>
+                Cell: 90089 83957<br/>
+                E-mail: zuberruman83597@gmail.com<br/>
+                GSTIN : 29BCOPA4961P1ZV <br/> <br/>
+
+Bank Details <br/>
+Bank : CANARA BANK <br/>
+A/c Name : AH CHILLIS
+A/c No : 0506201003932 <br/>
+IFSC Code : CNRB0000506 <br/>
+                </p>
+              </h3>
+            </td>
+          </tr>
+          <tr>
+            <th style="width: 180px"><h4>Item Name</h4></th>
+            <th style="width: 150px"><h4>Bags</h4></th>
+            <th style="width: 80px"><h4>Weight</h4></th>
+            <th style="width: 80px"><h4>Price per KG</h4></th>
+            <th style="width: 80px"><h4>Amount</h4></th>
+            <th style="width: 80px"><h4>C-GST</h4></th>
+            <th style="width: 80px"><h4>S-GST</h4></th>
+            <th style="width: 140px"><h4>TOTAL</h4></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td> <%= @customer.item_name %> </td>
+            <td> <%= @customer.bags %> </td>
+            <td> <%= @customer.weight %> </td>
+            <td> <%= @customer.price_per_kg %></td>
+             <td><%= @customer.amount %></td>
+            <td><%= @customer.c_gst %></td>
+            <td><%= @customer.s_gst %></td>
+            <td><%= @customer.total_amt %></td>
+          </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table>
+
+      <table class="hm-p table-bordered" style="width: 100%; margin-top: 30px">
+        <tr style="background: #fcbd02">
+          <th>Total Order Value</th>
+          <td style="width: 150px; text-align: center; border-right: none">
+            <b><%= @customer.total_amt %></b>
+          </td>
+          <td colspan="5" style="border-left: none"></td>
+        </tr>
+      </table>
+
+      <table style="width: 100%" cellspacing="0" cellspadding="0" border="0">
+          <td>
+            <p style="margin: 0; text-align: left"><b>AH CHILLIS</b></p>
+            <p style="margin: 0; text-align: right">This is Computer generated and do not require Signature</p>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </body>
+</html>
+
