@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'home#index'
   get 'employee/update'
   post 'pdf/generate'
   devise_for :admin_users, ActiveAdmin::Devise.config

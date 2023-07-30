@@ -9,6 +9,7 @@ class EmployeeAmount < ApplicationRecord
   def update_employee
     emp = self.employee
     emp.amount_taken += self.amount
+    emp.amount_balance = emp.year_package - emp.amount_taken
     emp.save
   end
 end

@@ -16,8 +16,8 @@ ActiveAdmin.register Employee do
     column :year_package
     column :amount_taken
     column :amount_balance
-    column 'Download' do |resource|
-         link_to 'Add Taken Amount', employee_update_path(resource, employee: resource)
+    column 'Actions' do |resource|
+         link_to 'Add Amount', new_admin_employee_amount_path
     end
     actions
   end
@@ -28,5 +28,21 @@ ActiveAdmin.register Employee do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :year_package
+      row "Amounts" do
+        panel "Amounts History" do
+          table_for employee.employee_amounts do
+            column "Date", :created_at
+            column :amount
+          end
+        end
+      end
+      row :amount_taken
+      row :amount_balance
+    end
+  end  
 end
