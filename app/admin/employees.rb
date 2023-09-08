@@ -17,7 +17,7 @@ ActiveAdmin.register Employee do
     column :amount_taken
     column :amount_balance
     column 'Actions' do |resource|
-         link_to 'Add Amount', new_admin_employee_amount_path
+         link_to 'Add Amount', new_admin_employee_amount_path(employee_id: resource.id)
     end
     actions
   end
@@ -45,4 +45,12 @@ ActiveAdmin.register Employee do
       row :amount_balance
     end
   end  
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :year_package
+    end
+    f.actions
+  end
 end
